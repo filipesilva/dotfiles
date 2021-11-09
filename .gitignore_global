@@ -1,0 +1,6 @@
+.vscode/
+.calva/
+.lsp/
+
+# emacs temp files
+.\#*
