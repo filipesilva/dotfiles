@@ -66,7 +66,6 @@
 ;; See https://github.com/hlissner/doom-emacs/issues/5738 for details.
 (eval-after-load 'clojure-mode '(setq clojure--prettify-symbols-alist nil))
 
-
 ;; Enable cleverparens (see packages.el for load)
 ;; Install https://github.com/hlissner/doom-emacs/issues/3743
 ;; Movement https://github.com/luxbock/evil-cleverparens#movement
@@ -85,6 +84,10 @@
 ;; Remap localleader to \
 ;; https://github.com/hlissner/doom-emacs/blob/develop/docs/faq.org#how-do-i-change-the-leaderlocalleader-keys
 (setq doom-localleader-key "\\")
+
+;; Match all symbol under cursor, in addition to R in visual modde
+;; https://github.com/hlissner/evil-multiedit#usage
+(define-key evil-normal-state-map "R" 'evil-multiedit-match-all)
 
 ;; Some bits and pieces from https://zzamboni.org/post/my-doom-emacs-configuration-with-commentary/
 (setq auto-save-default t)

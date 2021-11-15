@@ -118,6 +118,8 @@ https://github.com/hlissner/evil-multiedit
 R - in visual mode, enter mc mode
 return - toggle cursor, or toggle off all cursors outside of selection
 C-n/p - next/previous cursor
+I - insert at start of region
+
 
 ## evil-cleverparens
 
