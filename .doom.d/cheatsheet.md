@@ -80,6 +80,15 @@ p - paste after cursor
 P = paste before cursor
 
 
+## Git
+
+SPC g g - enter magit
+  c c - start commit
+    C-c C-c - commit
+    C-c C-k - cancel
+  p p - push
+
+
 ## Shell
 : - input emacs command
 SPC : - search emacs command
