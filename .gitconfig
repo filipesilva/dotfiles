@@ -12,8 +12,8 @@
 	amend = !git add . && git commit --amend --no-edit && git push --force-with-lease 
 	recent = "!git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
 	rbi = "!f() { git rebase -i ${1:-master}; }; f"
-  rbc = git rebase --continue
-  ski = git stash --keep-index --include-untracked
+  rbc = rebase --continue
+  cob = checkout -b
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = code --wait
