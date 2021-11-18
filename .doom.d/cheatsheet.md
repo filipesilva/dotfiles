@@ -6,6 +6,7 @@
 SPC f s - save a file (:w, cmd+s also works)
 SPC .   - find a file
 SPC SPC - find file in project
+SPC f f - find file
 SPC p p - switch to project
 SPC q q - quit
 SPC q r - restart and restore
@@ -109,7 +110,7 @@ SPC h v - describe variable
 
 C+c SPC - clojure-align
 <none> - align-regexp
-
+<none> - untabify
 
 ### expand-region
 

@@ -1,36 +1,36 @@
 [user]
-	name = Filipe Silva
-	email = filipematossilva@gmail.com
+    name = Filipe Silva
+    email = filipematossilva@gmail.com
 [alias]
-	co = checkout
-	br = branch
-	ci = commit
-	st = status
-	rs = reset HEAD~1
-	lg = log --graph --decorate --oneline -5
-	can = commit --amend --no-edit
-	amend = !git add . && git commit --amend --no-edit && git push --force-with-lease 
-	recent = "!git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
-	rbi = "!f() { git rebase -i ${1:-master}; }; f"
-  rbc = rebase --continue
-  cob = checkout -b
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+    rs = reset HEAD~1
+    lg = log --graph --decorate --oneline -5
+    can = commit --amend --no-edit
+    amend = !git add . && git commit --amend --no-edit && git push --force-with-lease
+    recent = "!git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
+    rbi = "!f() { git rebase -i ${1:-master}; }; f"
+    rbc = rebase --continue
+    cob = checkout -b
 [core]
-	excludesfile = ~/.gitignore_global
-	editor = code --wait
+    excludesfile = ~/.gitignore_global
+    editor = code --wait
 [diff]
-	tool = default-difftool
+    tool = default-difftool
 [difftool "default-difftool"]
-	cmd = code --wait --diff $LOCAL $REMOTE
+    cmd = code --wait --diff $LOCAL $REMOTE
 [rebase]
-	autosquash = true
+    autosquash = true
 [pull]
-	rebase = true
+    rebase = true
 [init]
-	defaultBranch = master
+    defaultBranch = master
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 [merge]
-	conflictStyle = diff3
+    conflictStyle = diff3
