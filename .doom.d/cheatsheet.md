@@ -74,7 +74,8 @@ O - insert in new line above
 J - join line below
 dd - delete line
 d9d - delete 9 lines after
-D - delete from cursor to end of line
+D - delete from cursor to end of line (also d$)
+d0 - delete from cursor to start of line
 yy - copy line
 Y - copy from cursor to end of line
 p - paste after cursor
@@ -140,3 +141,8 @@ https://github.com/luxbock/evil-cleverparens
 M-(/) - wrap next/previous, also {}[]
 M-r - raise
 M-s - splice
+
+## CIDER
+
+### debugging on clj
+https://docs.cider.mx/cider/debugging/debugger.html

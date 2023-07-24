@@ -93,10 +93,45 @@
 (setq auto-save-default t)
 (setq confirm-kill-emacs nil)
 
+;; Format js code with 2 spaces.
+(setq js2-basic-offset 2)
+
+;; Cider format keybinds
+(map! (:localleader
+       (:map (clojure-mode-map clojurescript-mode-map clojurec-mode-map)
+             "f"  #'cider-format-defun
+             "F"  #'cider-format-buffer)))
+
+
+;; Don't auto-wrap git body lines at the 72 default, use 100 instead.
+;; Can also toggle auto-fill-mode to disable it.
+(setq git-commit-fill-column 100)
+
+;; Accept completions from copilot and fallback to company
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)))
+
+;; I use $HOME as a project root so I need to set this
+(after! projectile (setq projectile-project-root-files-bottom-up (remove ".git"
+          projectile-project-root-files-bottom-up)))              
+
+
+;; Metabase dev
+(setq cider-path-translations '(("/app/harbormaster/source" . "~/work/harbormaster")
+                                ("/app/metabase/source" . "~/work/metabase")
+                                ("/root/.m2/" . "~/.mba/.mba-home/.m2/")))
+
+;; Disable zoom with ctrl+mousewheel
+(unbind-key "C-<wheel-up>")
+(unbind-key "C-<wheel-down>")
 
 ;; TODO
 ;; - maybe better parens guardrails https://github.com/hlissner/doom-emacs/issues/478
 ;; - learn window mgmt https://github.com/hlissner/doom-emacs/blob/develop/modules/ui/window-select/README.org
 ;; - learn doc lookup https://github.com/hlissner/doom-emacs/tree/develop/modules/tools/lookup#look-up-documentation
 ;; - learn evil-cleverparens https://github.com/luxbock/evil-cleverparens#movement
-;; - learn visual mode to use with multi-edit

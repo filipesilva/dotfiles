@@ -1,6 +1,7 @@
 [user]
     name = Filipe Silva
     email = filipematossilva@gmail.com
+	signingkey = /Users/filipesilva/.ssh/id_ed25519
 [alias]
     co = checkout
     br = branch
@@ -14,11 +15,15 @@
     rbi = "!f() { git rebase -i ${1:-master}; }; f"
     rbc = rebase --continue
     cob = checkout -b
+    wip = commit -m "wip" .
+    unc = reset HEAD~1
+    miw = git merge -Xignore-space-change
 [core]
     excludesfile = ~/.gitignore_global
     editor = code --wait
 [diff]
     tool = default-difftool
+	  external = difft
 [difftool "default-difftool"]
     cmd = code --wait --diff $LOCAL $REMOTE
 [rebase]
@@ -34,3 +39,7 @@
     required = true
 [merge]
     conflictStyle = diff3
+[push]
+	autoSetupRemote = true
+[gpg]
+	format = ssh
