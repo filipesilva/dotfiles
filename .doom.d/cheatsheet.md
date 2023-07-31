@@ -63,6 +63,7 @@ SPC / - search in project
 SPC * - search for word in project
 C-c C-e - enter edit mode (from list search)
 C-c C-c - commit edit changes
+SPC ' - repeat last search
 
 
 ## Editing
@@ -79,7 +80,9 @@ d0 - delete from cursor to start of line
 yy - copy line
 Y - copy from cursor to end of line
 p - paste after cursor
-P = paste before cursor
+P - paste before cursor (doesn't add to kill-ring)
+C-p/n - cycle paste prev/next from kill ring
+SPC i y - show and insert from kill-ring
 
 
 ## Git
@@ -92,7 +95,7 @@ SPC g g - enter magit
 
 
 ## Shell
-: - input emacs command
+: - input emacs command, tab to autocomplete
 SPC : - search emacs command
 SPC p ! - run single shell command in project
 
@@ -109,7 +112,7 @@ SPC h v - describe variable
 
 ### Align
 
-C+c SPC - clojure-align
+C-c SPC - clojure-align
 <none> - align-regexp
 <none> - untabify
 
@@ -130,17 +133,22 @@ R - in visual mode, enter mc mode
 return - toggle cursor, or toggle off all cursors outside of selection
 C-n/p - next/previous cursor
 I - insert at start of region
-
+``
 
 ## evil-cleverparens
 
 https://github.com/luxbock/evil-cleverparens
 
-> - slurp
-< - barf
+</> - barf/slurp, think "move the parens"
 M-(/) - wrap next/previous, also {}[]
 M-r - raise
-M-s - splice
+M-s - splice (unwrap)
+[{ - prev/next opening parens
+]} - next/prev closing parens
+() - back/forward up a sexp
+H/L - back/forward a sexp
+M-h/l - next toplevel form start/end (gets stuck within comment forms)
+
 
 ## CIDER
 
