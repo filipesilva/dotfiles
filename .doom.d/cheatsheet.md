@@ -73,6 +73,7 @@ I - insert at beginning of line
 o - insert in new line below
 O - insert in new line above
 J - join line below
+dd/yy/cc - delete, yank (copy), delete & change
 dd - delete line
 d9d - delete 9 lines after
 D - delete from cursor to end of line (also d$)
@@ -148,6 +149,7 @@ M-s - splice (unwrap)
 () - back/forward up a sexp
 H/L - back/forward a sexp
 M-h/l - next toplevel form start/end (gets stuck within comment forms)
+M-D/Y/C - delete/yank/change enclosing form, supports univeral arg for all/count
 
 
 ## CIDER
