@@ -6,6 +6,7 @@
 SPC f s - save a file (:w, cmd+s also works)
 SPC .   - find a file
 SPC SPC - find file in project
+SPC u SPC SPC - clear cache then find file (SPC u is universal arg)
 SPC f f - find file
 SPC p p - switch to project
 SPC q q - quit
@@ -33,9 +34,10 @@ k - up
 j - down
 h - left
 l - right
+C-j/k - down/up in menus
 0 - beginning of line
 ^ - beginning of non-whitespace
-$ - end of line
+\$ - end of line (ignore the slash, just escaping for the editor highlighting)
 9j - move down 9 lines
 w - move forward by word
 b - move backward by word
@@ -48,6 +50,7 @@ ma - mark a line in a file with marker "a"
 'a - after moving around, go back to line of marker "a"
 :marks - view all the marks
 '' - go to the last place you were
+C-o - go back to previous places
 
 
 ### Search
@@ -84,6 +87,11 @@ p - paste after cursor
 P - paste before cursor (doesn't add to kill-ring)
 C-p/n - cycle paste prev/next from kill ring
 SPC i y - show and insert from kill-ring
+S - in visual mode, surround with char
+g z - multicursor menu
+g z j/k - add cursor below/above (will move)
+10 g z j - add 10 cursors below
+g z z - add frozen cursor here (will not move)
 
 
 ## Git
@@ -107,6 +115,8 @@ K - help for symbol
 SPC h k - describe keybind
 SPC h f - describe function 
 SPC h v - describe variable
+SPC h d s - search for doomemacs docs
+SPC h i - overall documentation
 
 
 ## Refactoring
@@ -156,3 +166,6 @@ M-D/Y/C - delete/yank/change enclosing form, supports univeral arg for all/count
 
 ### debugging on clj
 https://docs.cider.mx/cider/debugging/debugger.html
+
+\ i i - inspect thing under cursor, will show how strings would be printed
+SPC c x - show errors
