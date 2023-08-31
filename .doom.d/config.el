@@ -111,10 +111,10 @@
 (use-package! copilot
   :hook (prog-mode . copilot-mode)
   :bind (:map copilot-completion-map
-              ("<tab>" . 'copilot-accept-completion)
-              ("TAB" . 'copilot-accept-completion)
-              ("C-TAB" . 'copilot-accept-completion-by-word)
-              ("C-<tab>" . 'copilot-accept-completion-by-word)))
+              ("C-<tab>" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion)
+              ("M-TAB" . 'copilot-accept-completion-by-word)
+              ("M-<tab>" . 'copilot-accept-completion-by-word)))
 
 ;; I use $HOME as a project root so I need to set this
 (after! projectile (setq projectile-project-root-files-bottom-up (remove ".git"
@@ -129,6 +129,22 @@
 ;; Disable zoom with ctrl+mousewheel
 (unbind-key "C-<wheel-up>")
 (unbind-key "C-<wheel-down>")
+
+;; Disable clj-refactor AST warnings, but don't auto-build on startup
+
+(setq cljr-warn-on-eval nil)
+(setq cljr-eagerly-build-asts-on-startup nil)
+
+;; Friendly smerge access, instead of C-c ^
+;; Map how-to in https://discourse.doomemacs.org/t/how-to-re-bind-keys/56
+(map! :map magit-mode-map
+      :prefix ("C-c s" . "smerge")
+      "RET" #'magit-smerge-keep-current
+      "u" #'magit-smerge-keep-upper
+      "b" #'magit-smerge-keep-base
+      "l" #'magit-smerge-keep-lower
+      "a" #'magit-smerge-keep-all)
+
 
 ;; TODO
 ;; - maybe better parens guardrails https://github.com/hlissner/doom-emacs/issues/478

@@ -13,6 +13,8 @@ SPC q q - quit
 SPC q r - restart and restore
 SPC f p - open config file
 SPC h r r - reload doom config
+C-g - interrupt command
+SPC t f - toggle fullscreen
 
 
 ## Windows and buffers
@@ -23,9 +25,11 @@ SPC b B - switch buffer
 SPC b d - delete buffer
 SPC w v - split vertically
 SPC w s - split horizontally
-SPC w <number> - go to window
+C-w <number> - go to window
+C-w p - previous window
 SPC w d - delete window
 SPC t Z - zen mode
+SPC o p - open file sidebar, treemacs
 
 
 ## Movement
@@ -50,7 +54,8 @@ ma - mark a line in a file with marker "a"
 'a - after moving around, go back to line of marker "a"
 :marks - view all the marks
 '' - go to the last place you were
-C-o - go back to previous places
+C-o - go back to previous place in xref
+C-i - go forward in xref
 
 
 ### Search
@@ -62,7 +67,7 @@ C-o - go back to previous places
 ? - search backward
 SPC s s - list search in buffer
 SPC s S - list search for word under cursor
-SPC / - search in project
+SPC / - search in project, supports file ripgrep globs e.g `-- -g *_test.clj`
 SPC * - search for word in project
 C-c C-e - enter edit mode (from list search)
 C-c C-c - commit edit changes
@@ -76,9 +81,11 @@ I - insert at beginning of line
 o - insert in new line below
 O - insert in new line above
 J - join line below
-dd/yy/cc - delete, yank (copy), delete & change
+dd/yy/cc - delete, yank (just copy), delete & change, all these add to kill-ring (clipboard)
 dd - delete line
 d9d - delete 9 lines after
+dG - delete to EOF
+dgg - delete to SOF
 D - delete from cursor to end of line (also d$)
 d0 - delete from cursor to start of line
 yy - copy line
@@ -92,6 +99,8 @@ g z - multicursor menu
 g z j/k - add cursor below/above (will move)
 10 g z j - add 10 cursors below
 g z z - add frozen cursor here (will not move)
+g z m - make cursors for all matches of visual selection
+SPC c x - list errors
 
 
 ## Git
@@ -101,6 +110,8 @@ SPC g g - enter magit
     C-c C-c - commit
     C-c C-k - cancel
   p p - push
+RET - on unmerged changes, enters smerge
+C-c ^ - smerge commands
 
 
 ## Shell
@@ -117,6 +128,13 @@ SPC h f - describe function
 SPC h v - describe variable
 SPC h d s - search for doomemacs docs
 SPC h i - overall documentation
+
+
+## Macros
+
+q1 - record macro into register 1, q to stop
+@1 - execute macro 1
+Q - execute last macro
 
 
 ## Refactoring
@@ -169,3 +187,8 @@ https://docs.cider.mx/cider/debugging/debugger.html
 
 \ i i - inspect thing under cursor, will show how strings would be printed
 SPC c x - show errors
+
+## Etc
+
+reload dir locals https://emacs.stackexchange.com/questions/13080/reloading-directory-local-variables
+: (hack-dir-local-variables-non-file-buffer)
