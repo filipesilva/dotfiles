@@ -145,6 +145,11 @@
       "l" #'magit-smerge-keep-lower
       "a" #'magit-smerge-keep-all)
 
+;; My custom leader bindings
+;; https://rameezkhan.me/posts/2020/2020-07-03--adding-keybindings-to-doom-emacs/
+(map! :leader
+      :desc "Repeat a search"
+      "\"" #'vertico-repeat-select)
 
 ;; TODO
 ;; - maybe better parens guardrails https://github.com/hlissner/doom-emacs/issues/478

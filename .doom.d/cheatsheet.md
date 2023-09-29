@@ -72,6 +72,7 @@ SPC * - search for word in project
 C-c C-e - enter edit mode (from list search)
 C-c C-c - commit edit changes
 SPC ' - repeat last search
+SPC " - show list of searches and repeat one
 
 
 ## Editing

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: exclude
+# uuid: exclude
+# --
+(:refer-clojure :exclude [$0])
