@@ -15,6 +15,7 @@ SPC f p - open config file
 SPC h r r - reload doom config
 C-g - interrupt command
 SPC t f - toggle fullscreen
+C-l - center cursor
 
 
 ## Windows and buffers
@@ -47,6 +48,7 @@ w - move forward by word
 b - move backward by word
 gg - first line
 G - last line
+123 G - go to line 123
 ; - repeat that command again
 % - find matching brace, paren, etc
 ma - mark a line in a file with marker "a"
@@ -67,10 +69,14 @@ C-i - go forward in xref
 ? - search backward
 SPC s s - list search in buffer
 SPC s S - list search for word under cursor
-SPC / - search in project, supports file ripgrep globs e.g `-- -g *_test.clj`
+SPC s d - search this directory
+SPC / - search in project
+  - supports file ripgrep globs e.g `-- -g *_test.clj`
+  - tab for next section
 SPC * - search for word in project
 C-c C-e - enter edit mode (from list search)
 C-c C-c - commit edit changes
+C-c C-l - collect results into a new buffer
 SPC ' - repeat last search
 SPC " - show list of searches and repeat one
 
@@ -102,6 +108,7 @@ g z j/k - add cursor below/above (will move)
 g z z - add frozen cursor here (will not move)
 g z m - make cursors for all matches of visual selection
 SPC c x - list errors
+K - docs for cursor
 
 
 ## Git

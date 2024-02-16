@@ -120,6 +120,10 @@
 (after! projectile (setq projectile-project-root-files-bottom-up (remove ".git"
           projectile-project-root-files-bottom-up)))              
 
+;; Tell cider to download java sources for \ h j
+;; https://docs.cider.mx/cider/config/basic_config.html#use-enrich-classpath
+;; Doesn't seem to work for deps.edn projects atm...
+(setq cider-enrich-classpath t)
 
 ;; Metabase dev
 (setq cider-path-translations '(("/app/harbormaster/source" . "~/work/harbormaster")
@@ -131,7 +135,6 @@
 (unbind-key "C-<wheel-down>")
 
 ;; Disable clj-refactor AST warnings, but don't auto-build on startup
-
 (setq cljr-warn-on-eval nil)
 (setq cljr-eagerly-build-asts-on-startup nil)
 

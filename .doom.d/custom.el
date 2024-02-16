@@ -13,16 +13,16 @@
       (l/matche
        '(1
          (:defn)))
-      (p\.types/def-abstract-type
+      (p.types/def-abstract-type
        '(1
          (:defn)))
-      (p\.types/defprotocol+
+      (p.types/defprotocol+
        '(1
          (:defn)))
-      (p\.types/defrecord+
+      (p.types/defrecord+
        '(2 nil nil
          (:defn)))
-      (p\.types/deftype+
+      (p.types/deftype+
        '(2 nil nil
          (:defn)))
       (p/def-map-type
@@ -37,7 +37,7 @@
       (p/deftype+
        '(2 nil nil
          (:defn)))
-      (tools\.macro/macrolet
+      (tools.macro/macrolet
        '(1
          ((:defn))
          :form)))
@@ -46,7 +46,7 @@
      (eval put 'mi/define-simple-hydration-method 'clojure-doc-string-elt 3)
      (eval put 'methodical/defmulti 'clojure-doc-string-elt 2)
      (eval put 'methodical/defmethod 'clojure-doc-string-elt 3)
-     (eval put 'p\.types/defprotocol+ 'clojure-doc-string-elt 2)
+     (eval put 'p.types/defprotocol+ 'clojure-doc-string-elt 2)
      (eval put 's/defn 'clojure-doc-string-elt 2)
      (eval put 'setting/defsetting 'clojure-doc-string-elt 2)
      (eval put 'defsetting 'clojure-doc-string-elt 2)
@@ -57,218 +57,221 @@
      (eval put 'defendpoint-async 'clojure-doc-string-elt 3)
      (eval put 'defendpoint 'clojure-doc-string-elt 3)
      (eval put 'defendpoint-schema 'clojure-doc-string-elt 3)))
+ '(magit-todos-insert-after '(bottom) nil nil "Changed by setter of obsolete option `magit-todos-insert-at'")
  '(safe-local-variable-values
-   '((eval progn
+   '((cider-ns-refresh-after-fn . "integrant.repl/resume")
+     (cider-ns-refresh-before-fn . "integrant.repl/suspend")
+     (eval progn
       (put 's/defn 'clojure-doc-string-elt 2)
       (put 'defprotocol+ 'clojure-doc-string-elt 2)
-      (put 'p\.types/defprotocol+ 'clojure-doc-string-elt 2)
+      (put 'p.types/defprotocol+ 'clojure-doc-string-elt 2)
       (define-clojure-indent
-        (rf/reg-event-db 1)
-        (rf/reg-sub 1)
-        (p\.types/defprotocol+
-         '(1
-           (:defn)))
-        (p/defprotocol+
-         '(1
-           (:defn)))
-        (defprotocol+
-          '(1
-            (:defn)))
-        (p\.types/defrecord+
-         '(2 nil nil
-           (:defn)))
-        (p/defrecord+
-         '(2 nil nil
-           (:defn)))
-        (defrecord+
-          '(2 nil nil
-            (:defn)))
-        (insert! 1)
-        (transaction 2)
-        (try-backoff 1))
+       (rf/reg-event-db 1)
+       (rf/reg-sub 1)
+       (p.types/defprotocol+
+        '(1
+          (:defn)))
+       (p/defprotocol+
+        '(1
+          (:defn)))
+       (defprotocol+
+        '(1
+          (:defn)))
+       (p.types/defrecord+
+        '(2 nil nil
+          (:defn)))
+       (p/defrecord+
+        '(2 nil nil
+          (:defn)))
+       (defrecord+
+        '(2 nil nil
+          (:defn)))
+       (insert! 1)
+       (transaction 2)
+       (try-backoff 1))
       (define-clojure-indent
-        (defroutes 'defun)
-        (GET 2)
-        (POST 2)
-        (PUT 2)
-        (DELETE 2)
-        (HEAD 2)
-        (ANY 2)
-        (OPTIONS 2)
-        (PATCH 2)
-        (rfn 2)
-        (let-routes 1)
-        (context 2))
+       (defroutes 'defun)
+       (GET 2)
+       (POST 2)
+       (PUT 2)
+       (DELETE 2)
+       (HEAD 2)
+       (ANY 2)
+       (OPTIONS 2)
+       (PATCH 2)
+       (rfn 2)
+       (let-routes 1)
+       (context 2))
       (setq cider-format-code-options
-       '(("indents"
-          (("context-with-404"
-            (("inner" 0))))))))
+            '(("indents"
+               (("context-with-404"
+                 (("inner" 0))))))))
      (eval progn
       (put 's/defn 'clojure-doc-string-elt 2)
       (put 'defprotocol+ 'clojure-doc-string-elt 2)
-      (put 'p\.types/defprotocol+ 'clojure-doc-string-elt 2)
+      (put 'p.types/defprotocol+ 'clojure-doc-string-elt 2)
       (define-clojure-indent
-        (rf/reg-event-db 1)
-        (rf/reg-sub 1)
-        (p\.types/defprotocol+
-         '(1
-           (:defn)))
-        (p/defprotocol+
-         '(1
-           (:defn)))
-        (defprotocol+
-          '(1
-            (:defn)))
-        (p\.types/defrecord+
-         '(2 nil nil
-           (:defn)))
-        (p/defrecord+
-         '(2 nil nil
-           (:defn)))
-        (defrecord+
-          '(2 nil nil
-            (:defn)))
-        (insert! 1)
-        (transaction 2)
-        (try-backoff 1))
+       (rf/reg-event-db 1)
+       (rf/reg-sub 1)
+       (p.types/defprotocol+
+        '(1
+          (:defn)))
+       (p/defprotocol+
+        '(1
+          (:defn)))
+       (defprotocol+
+        '(1
+          (:defn)))
+       (p.types/defrecord+
+        '(2 nil nil
+          (:defn)))
+       (p/defrecord+
+        '(2 nil nil
+          (:defn)))
+       (defrecord+
+        '(2 nil nil
+          (:defn)))
+       (insert! 1)
+       (transaction 2)
+       (try-backoff 1))
       (define-clojure-indent
-        (context-with-404 2)
-        (defroutes 'defun)
-        (GET 2)
-        (POST 2)
-        (PUT 2)
-        (DELETE 2)
-        (HEAD 2)
-        (ANY 2)
-        (OPTIONS 2)
-        (PATCH 2)
-        (rfn 2)
-        (let-routes 1)))
+       (context-with-404 2)
+       (defroutes 'defun)
+       (GET 2)
+       (POST 2)
+       (PUT 2)
+       (DELETE 2)
+       (HEAD 2)
+       (ANY 2)
+       (OPTIONS 2)
+       (PATCH 2)
+       (rfn 2)
+       (let-routes 1)))
      (eval progn
       (put 's/defn 'clojure-doc-string-elt 2)
       (put 'defprotocol+ 'clojure-doc-string-elt 2)
-      (put 'p\.types/defprotocol+ 'clojure-doc-string-elt 2)
+      (put 'p.types/defprotocol+ 'clojure-doc-string-elt 2)
       (define-clojure-indent
-        (rf/reg-event-db 1)
-        (rf/reg-sub 1)
-        (p\.types/defprotocol+
-         '(1
-           (:defn)))
-        (p/defprotocol+
-         '(1
-           (:defn)))
-        (defprotocol+
-          '(1
-            (:defn)))
-        (p\.types/defrecord+
-         '(2 nil nil
-           (:defn)))
-        (p/defrecord+
-         '(2 nil nil
-           (:defn)))
-        (defrecord+
-          '(2 nil nil
-            (:defn)))
-        (insert! 1)
-        (transaction 2)
-        (try-backoff 1))
+       (rf/reg-event-db 1)
+       (rf/reg-sub 1)
+       (p.types/defprotocol+
+        '(1
+          (:defn)))
+       (p/defprotocol+
+        '(1
+          (:defn)))
+       (defprotocol+
+        '(1
+          (:defn)))
+       (p.types/defrecord+
+        '(2 nil nil
+          (:defn)))
+       (p/defrecord+
+        '(2 nil nil
+          (:defn)))
+       (defrecord+
+        '(2 nil nil
+          (:defn)))
+       (insert! 1)
+       (transaction 2)
+       (try-backoff 1))
       (define-clojure-indent
-        (context-with-404 2)
-        (defroutes 'defun)
-        (GET 2)
-        (POST 2)
-        (PUT 2)
-        (DELETE 2)
-        (HEAD 2)
-        (ANY 2)
-        (OPTIONS 2)
-        (PATCH 2)
-        (rfn 2)
-        (let-routes 1)
-        (context 2)))
+       (context-with-404 2)
+       (defroutes 'defun)
+       (GET 2)
+       (POST 2)
+       (PUT 2)
+       (DELETE 2)
+       (HEAD 2)
+       (ANY 2)
+       (OPTIONS 2)
+       (PATCH 2)
+       (rfn 2)
+       (let-routes 1)
+       (context 2)))
      (eval progn
       (put 's/defn 'clojure-doc-string-elt 2)
       (put 'defprotocol+ 'clojure-doc-string-elt 2)
-      (put 'p\.types/defprotocol+ 'clojure-doc-string-elt 2)
+      (put 'p.types/defprotocol+ 'clojure-doc-string-elt 2)
       (define-clojure-indent
-        (rf/reg-event-db 1)
-        (rf/reg-sub 1)
-        (p\.types/defprotocol+
-         '(1
-           (:defn)))
-        (p/defprotocol+
-         '(1
-           (:defn)))
-        (defprotocol+
-          '(1
-            (:defn)))
-        (p\.types/defrecord+
-         '(2 nil nil
-           (:defn)))
-        (p/defrecord+
-         '(2 nil nil
-           (:defn)))
-        (defrecord+
-          '(2 nil nil
-            (:defn)))
-        (insert! 1)
-        (transaction 2)
-        (try-backoff 1)
-        (context-with-404 2))
+       (rf/reg-event-db 1)
+       (rf/reg-sub 1)
+       (p.types/defprotocol+
+        '(1
+          (:defn)))
+       (p/defprotocol+
+        '(1
+          (:defn)))
+       (defprotocol+
+        '(1
+          (:defn)))
+       (p.types/defrecord+
+        '(2 nil nil
+          (:defn)))
+       (p/defrecord+
+        '(2 nil nil
+          (:defn)))
+       (defrecord+
+        '(2 nil nil
+          (:defn)))
+       (insert! 1)
+       (transaction 2)
+       (try-backoff 1)
+       (context-with-404 2))
       (define-clojure-indent
-        (defroutes 'defun)
-        (GET 2)
-        (POST 2)
-        (PUT 2)
-        (DELETE 2)
-        (HEAD 2)
-        (ANY 2)
-        (OPTIONS 2)
-        (PATCH 2)
-        (rfn 2)
-        (let-routes 1)
-        (context 2)))
+       (defroutes 'defun)
+       (GET 2)
+       (POST 2)
+       (PUT 2)
+       (DELETE 2)
+       (HEAD 2)
+       (ANY 2)
+       (OPTIONS 2)
+       (PATCH 2)
+       (rfn 2)
+       (let-routes 1)
+       (context 2)))
      (eval progn
       (put 's/defn 'clojure-doc-string-elt 2)
       (put 'defprotocol+ 'clojure-doc-string-elt 2)
-      (put 'p\.types/defprotocol+ 'clojure-doc-string-elt 2)
+      (put 'p.types/defprotocol+ 'clojure-doc-string-elt 2)
       (define-clojure-indent
-        (rf/reg-event-db 1)
-        (rf/reg-sub 1)
-        (p\.types/defprotocol+
-         '(1
-           (:defn)))
-        (p/defprotocol+
-         '(1
-           (:defn)))
-        (defprotocol+
-          '(1
-            (:defn)))
-        (p\.types/defrecord+
-         '(2 nil nil
-           (:defn)))
-        (p/defrecord+
-         '(2 nil nil
-           (:defn)))
-        (defrecord+
-          '(2 nil nil
-            (:defn)))
-        (insert! 1)
-        (transaction 2)
-        (try-backoff 1))
+       (rf/reg-event-db 1)
+       (rf/reg-sub 1)
+       (p.types/defprotocol+
+        '(1
+          (:defn)))
+       (p/defprotocol+
+        '(1
+          (:defn)))
+       (defprotocol+
+        '(1
+          (:defn)))
+       (p.types/defrecord+
+        '(2 nil nil
+          (:defn)))
+       (p/defrecord+
+        '(2 nil nil
+          (:defn)))
+       (defrecord+
+        '(2 nil nil
+          (:defn)))
+       (insert! 1)
+       (transaction 2)
+       (try-backoff 1))
       (define-clojure-indent
-        (defroutes 'defun)
-        (GET 2)
-        (POST 2)
-        (PUT 2)
-        (DELETE 2)
-        (HEAD 2)
-        (ANY 2)
-        (OPTIONS 2)
-        (PATCH 2)
-        (rfn 2)
-        (let-routes 1)
-        (context 2)))
+       (defroutes 'defun)
+       (GET 2)
+       (POST 2)
+       (PUT 2)
+       (DELETE 2)
+       (HEAD 2)
+       (ANY 2)
+       (OPTIONS 2)
+       (PATCH 2)
+       (rfn 2)
+       (let-routes 1)
+       (context 2)))
      (eval define-clojure-indent
       (l/matcha
        '(1
@@ -276,16 +279,16 @@
       (l/matche
        '(1
          (:defn)))
-      (p\.types/def-abstract-type
+      (p.types/def-abstract-type
        '(1
          (:defn)))
-      (p\.types/defprotocol+
+      (p.types/defprotocol+
        '(1
          (:defn)))
-      (p\.types/defrecord+
+      (p.types/defrecord+
        '(2 nil nil
          (:defn)))
-      (p\.types/deftype+
+      (p.types/deftype+
        '(2 nil nil
          (:defn)))
       (p/def-map-type
@@ -300,7 +303,7 @@
       (p/deftype+
        '(2 nil nil
          (:defn)))
-      (tools\.macro/macrolet
+      (tools.macro/macrolet
        '(1
          ((:defn))
          :form)))
@@ -309,7 +312,7 @@
      (eval put 'mi/define-simple-hydration-method 'clojure-doc-string-elt 3)
      (eval put 'methodical/defmulti 'clojure-doc-string-elt 2)
      (eval put 'methodical/defmethod 'clojure-doc-string-elt 3)
-     (eval put 'p\.types/defprotocol+ 'clojure-doc-string-elt 2)
+     (eval put 'p.types/defprotocol+ 'clojure-doc-string-elt 2)
      (eval put 's/defn 'clojure-doc-string-elt 2)
      (eval put 'setting/defsetting 'clojure-doc-string-elt 2)
      (eval put 'defsetting 'clojure-doc-string-elt 2)
@@ -325,31 +328,31 @@
      (eval progn
       (put 's/defn 'clojure-doc-string-elt 2)
       (put 'defprotocol+ 'clojure-doc-string-elt 2)
-      (put 'p\.types/defprotocol+ 'clojure-doc-string-elt 2)
+      (put 'p.types/defprotocol+ 'clojure-doc-string-elt 2)
       (define-clojure-indent
-        (rf/reg-event-db 1)
-        (rf/reg-sub 1)
-        (p\.types/defprotocol+
-         '(1
-           (:defn)))
-        (p/defprotocol+
-         '(1
-           (:defn)))
-        (defprotocol+
-          '(1
-            (:defn)))
-        (p\.types/defrecord+
-         '(2 nil nil
-           (:defn)))
-        (p/defrecord+
-         '(2 nil nil
-           (:defn)))
-        (defrecord+
-          '(2 nil nil
-            (:defn)))
-        (insert! 1)
-        (transaction 2)
-        (try-backoff 1))))))
+       (rf/reg-event-db 1)
+       (rf/reg-sub 1)
+       (p.types/defprotocol+
+        '(1
+          (:defn)))
+       (p/defprotocol+
+        '(1
+          (:defn)))
+       (defprotocol+
+        '(1
+          (:defn)))
+       (p.types/defrecord+
+        '(2 nil nil
+          (:defn)))
+       (p/defrecord+
+        '(2 nil nil
+          (:defn)))
+       (defrecord+
+        '(2 nil nil
+          (:defn)))
+       (insert! 1)
+       (transaction 2)
+       (try-backoff 1))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
