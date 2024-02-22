@@ -154,6 +154,31 @@
       :desc "Repeat a search"
       "\"" #'vertico-repeat-select)
 
+;; There's a already a `SPC i r` as `From evil register`, that calls `consult-register`.
+;; This one, `SPC i R', stores to registers.
+(map! :leader
+      :prefix ("i")
+      :desc "To evil register"
+      "R" #'consult-register-store)
+
+;; Inspired by https://gist.github.com/dpsutton/7556cf1f4ecfc97da7b7e9d6dbf210c6
+;; Changed to eval without sending to repl buffer.
+;; Thanks Dan!
+(defun cider-insert-register-contents (register)
+  (interactive (list (register-read-with-preview "From register")))
+  (let ((form (get-register register)))
+    ;; could put form into a buffer and check if its parens are
+    ;; balanced
+    (if form
+        (cider-interactive-eval form nil nil (cider--nrepl-pr-request-map))
+      (user-error "No saved form in register"))))
+
+;; Eval register contents in repl, \ e g
+(map! :localleader
+      :map (clojure-mode-map clojurescript-mode-map clojurec-mode-map)
+      :prefix "e"
+      "g"  #'cider-insert-register-contents)
+
 ;; TODO
 ;; - maybe better parens guardrails https://github.com/hlissner/doom-emacs/issues/478
 ;; - learn window mgmt https://github.com/hlissner/doom-emacs/blob/develop/modules/ui/window-select/README.org

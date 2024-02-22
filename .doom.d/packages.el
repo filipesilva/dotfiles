@@ -53,15 +53,15 @@
 ;; My stuff 
 
 ;; Install https://github.com/luxbock/evil-cleverparens (see config.el for configuration)
-(package! evil-cleverparens :pin "134fe3396f975fb1ad261f52cd113f42ac1da4fc")
+(package! evil-cleverparens :pin "e8ccec32867e12d70a7cff5c70e4ac91f58dbd20")
 
 ;; Install expand-region
 ;; https://github.com/magnars/expand-region.el
 ;; https://github.com/hlissner/doom-emacs/blob/develop/docs/faq.org#why-do-non-evil-users-get-expand-region-but-not-evil-users
-(package! expand-region :pin "9e3f86c02c5e2ab6f0d95da8a34045b54f6166d1")
+(package! expand-region :pin "e8f4e0fe9c9a80a6a26e2b438502aba9a799d580")
 
 ;; Copilot for emacs
 ;; https://github.com/zerolfx/copilot.el
 (package! copilot
  :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist"))
- :pin "30a054f8569550853a9b6f947a2fe1ded7e7cc6b")
+ :pin "f8283e40aaa5d557979e89c633f144c97e4172ac")
