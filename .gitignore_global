@@ -4,3 +4,6 @@
 
 # emacs temp files
 .\#*
+
+# mac stuff
+.DS_Store

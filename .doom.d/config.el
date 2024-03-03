@@ -179,6 +179,38 @@
       :prefix "e"
       "g"  #'cider-insert-register-contents)
 
+
+;; Add a comment below the current form.
+(defun go-to-toplevel-and-insert-comment ()
+  (interactive)
+  (end-of-defun)
+  (insert "\n")
+  (insert "(comment\n  )\n")
+  (clojure-backward-logical-sexp)
+  (forward-char 1)
+  (clojure-forward-logical-sexp)
+  (insert "\n")
+  (indent-according-to-mode))
+
+(map! :localleader
+      :map (clojure-mode-map clojurescript-mode-map clojurec-mode-map)
+      :desc "Insert comment"
+      "q"  #'go-to-toplevel-and-insert-comment)
+
+;; Toggle completion. It's really slow on markdown!
+(map! :leader
+      :prefix ("t")
+      :desc "Toggle completion"
+      "C"  #'global-company-mode)
+
+;; Set current buffer to auto-revert to disk changes
+;; https://emacs.stackexchange.com/a/245/43660
+(map! :leader
+      :prefix ("t")
+      :desc "Toggle auto-revert"
+      "R"  #'auto-revert-mode)
+
+
 ;; TODO
 ;; - maybe better parens guardrails https://github.com/hlissner/doom-emacs/issues/478
 ;; - learn window mgmt https://github.com/hlissner/doom-emacs/blob/develop/modules/ui/window-select/README.org
