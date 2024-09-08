@@ -118,10 +118,6 @@
 ;;               ("M-TAB" . 'copilot-accept-completion-by-word)
 ;;               ("M-<tab>" . 'copilot-accept-completion-by-word)))
 
-;; I use $HOME as a project root so I need to set this
-;; (after! projectile (setq projectile-project-root-files-bottom-up (remove ".git"
-          ;; projectile-project-root-files-bottom-up)))
-
 ;; Tell cider to download java sources for \ h j
 ;; https://docs.cider.mx/cider/config/basic_config.html#use-enrich-classpath
 ;; Doesn't seem to work for deps.edn projects atm...
