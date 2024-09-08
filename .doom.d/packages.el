@@ -53,7 +53,7 @@
 ;; My stuff 
 
 ;; Install https://github.com/luxbock/evil-cleverparens (see config.el for configuration)
-(package! evil-cleverparens :pin "e8ccec32867e12d70a7cff5c70e4ac91f58dbd20")
+(package! evil-cleverparens :pin "6637717af0bdac55f97eef98433d53a10395cf77")
 
 ;; Install expand-region
 ;; https://github.com/magnars/expand-region.el
@@ -61,7 +61,17 @@
 (package! expand-region :pin "e8f4e0fe9c9a80a6a26e2b438502aba9a799d580")
 
 ;; Copilot for emacs
-;; https://github.com/zerolfx/copilot.el
-(package! copilot
- :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist"))
- :pin "f8283e40aaa5d557979e89c633f144c97e4172ac")
+;; https://github.com/copilot-emacs/copilot.el
+;; Temporarily disabled because it's giving me a ton of (wrong-type-argument package-desc nil) errors 
+;; (package! copilot
+;;  :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist"))
+;;  :pin "fd4d7e8c1e95aa9d3967b19905c9b8c3e03f6a5c")
+
+
+;; Ran into some problems around https://github.com/doomemacs/doomemacs/issues/4454
+;; had to delete ~/.emacs.d/.local/straight/repos/cider, sync, build
+;; (unpin! cider)
+;; (package! cider :pin "105da319b09a436552f1b3c6194cbbc833017dd2" )
+;; (package! cider
+;;  :recipe (:host github :repo "clojure-emacs/cider")
+;;  :pin "1401e26e2d373e00a064ae8fc7240e083200c5c6" )

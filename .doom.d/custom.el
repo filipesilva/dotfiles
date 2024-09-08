@@ -6,7 +6,27 @@
  '(custom-safe-themes
    '("afa47084cb0beb684281f480aa84dab7c9170b084423c7f87ba755b15f6776ef" default))
  '(ignored-local-variable-values
-   '((eval define-clojure-indent
+   '((elisp-lint-indent-specs
+      (if-let* . 2)
+      (when-let* . 1)
+      (let* . defun)
+      (nrepl-dbind-response . 2)
+      (cider-save-marker . 1)
+      (cider-propertize-region . 1)
+      (cider-map-repls . 1)
+      (cider--jack-in . 1)
+      (cider--make-result-overlay . 1)
+      (insert-label . defun)
+      (insert-align-label . defun)
+      (insert-rect . defun)
+      (cl-defun . 2)
+      (with-parsed-tramp-file-name . 2)
+      (thread-first . 0)
+      (thread-last . 0)
+      (transient-define-prefix . defmacro)
+      (transient-define-suffix . defmacro))
+     (checkdoc-package-keywords-flag)
+     (eval define-clojure-indent
       (l/matcha
        '(1
          (:defn)))
@@ -59,7 +79,10 @@
      (eval put 'defendpoint-schema 'clojure-doc-string-elt 3)))
  '(magit-todos-insert-after '(bottom) nil nil "Changed by setter of obsolete option `magit-todos-insert-at'")
  '(safe-local-variable-values
-   '((cider-ns-refresh-after-fn . "integrant.repl/resume")
+   '((js2-mode-show-strict-warnings)
+     (js2-mode-show-parse-errors)
+     (eval put 'mr/def 'clojure-doc-string-elt 2)
+     (cider-ns-refresh-after-fn . "integrant.repl/resume")
      (cider-ns-refresh-before-fn . "integrant.repl/suspend")
      (eval progn
       (put 's/defn 'clojure-doc-string-elt 2)

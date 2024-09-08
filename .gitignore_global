@@ -1,6 +1,7 @@
 .vscode/
 .calva/
 .lsp/
+.nrepl-port
 
 # emacs temp files
 .\#*

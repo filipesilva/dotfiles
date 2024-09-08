@@ -52,11 +52,13 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;; Doom doctor warns that I should set this to avoid issues with Fish shell
+(setq shell-file-name (executable-find "zsh"))
 
 ;; My stuff
 
 ;; Start fullscreen.
-(add-to-list 'initial-frame-alist '(fullscreen . fullscreen))
+;; (add-to-list 'initial-frame-alist '(fullscreen . fullscreen))
 
 ;; Fira Code font
 ;; https://github.com/tonsky/FiraCode
@@ -108,22 +110,23 @@
 (setq git-commit-fill-column 100)
 
 ;; Accept completions from copilot and fallback to company
-(use-package! copilot
-  :hook (prog-mode . copilot-mode)
-  :bind (:map copilot-completion-map
-              ("C-<tab>" . 'copilot-accept-completion)
-              ("C-TAB" . 'copilot-accept-completion)
-              ("M-TAB" . 'copilot-accept-completion-by-word)
-              ("M-<tab>" . 'copilot-accept-completion-by-word)))
+;; (use-package! copilot
+;;   :hook (prog-mode . copilot-mode)
+;;   :bind (:map copilot-completion-map
+;;               ("C-<tab>" . 'copilot-accept-completion)
+;;               ("C-TAB" . 'copilot-accept-completion)
+;;               ("M-TAB" . 'copilot-accept-completion-by-word)
+;;               ("M-<tab>" . 'copilot-accept-completion-by-word)))
 
 ;; I use $HOME as a project root so I need to set this
-(after! projectile (setq projectile-project-root-files-bottom-up (remove ".git"
-          projectile-project-root-files-bottom-up)))              
+;; (after! projectile (setq projectile-project-root-files-bottom-up (remove ".git"
+          ;; projectile-project-root-files-bottom-up)))
 
 ;; Tell cider to download java sources for \ h j
 ;; https://docs.cider.mx/cider/config/basic_config.html#use-enrich-classpath
 ;; Doesn't seem to work for deps.edn projects atm...
-(setq cider-enrich-classpath t)
+;; Also seems to break with 1.12 sync-deps stuff
+;; (setq cider-enrich-classpath t)
 
 ;; Metabase dev
 (setq cider-path-translations '(("/app/harbormaster/source" . "~/work/harbormaster")
@@ -173,12 +176,18 @@
         (cider-interactive-eval form nil nil (cider--nrepl-pr-request-map))
       (user-error "No saved form in register"))))
 
+;; TODO: improve by setting slots contents on config, making it more ergonomic to submit slot
 ;; Eval register contents in repl, \ e g
 (map! :localleader
       :map (clojure-mode-map clojurescript-mode-map clojurec-mode-map)
       :prefix "e"
       "g"  #'cider-insert-register-contents)
 
+;; Nice for uuids and ranges
+(map! :localleader
+      :map (clojure-mode-map clojurescript-mode-map clojurec-mode-map)
+      :prefix "e"
+      "p"  #'cider-eval-last-sexp-and-replace)
 
 ;; Add a comment below the current form.
 (defun go-to-toplevel-and-insert-comment ()
@@ -190,18 +199,23 @@
   (forward-char 1)
   (clojure-forward-logical-sexp)
   (insert "\n")
-  (indent-according-to-mode))
+  (indent-according-to-mode)
+  (insert " "))
 
 (map! :localleader
       :map (clojure-mode-map clojurescript-mode-map clojurec-mode-map)
       :desc "Insert comment"
       "q"  #'go-to-toplevel-and-insert-comment)
 
-;; Toggle completion. It's really slow on markdown!
+;; Toggle completion. It's really slow with copilot on!
 (map! :leader
       :prefix ("t")
       :desc "Toggle completion"
       "C"  #'global-company-mode)
+
+;; Don't autocomplete in markdown and text.
+;; It shows dictionary stuff but is super slow.
+(setq company-global-modes '(not text-mode org-mode gfm-mode markdown-mode))
 
 ;; Set current buffer to auto-revert to disk changes
 ;; https://emacs.stackexchange.com/a/245/43660
@@ -210,6 +224,14 @@
       :desc "Toggle auto-revert"
       "R"  #'auto-revert-mode)
 
+;; Doom emacs disables this for performance, but I want it on
+;; because of FileDB repl/query files
+;; https://github.com/doomemacs/doomemacs/blob/bbadabda511027e515f02ccd7b70291ed03d8945/lisp/doom-editor.el#L268
+;; Seems to revert to nil though, on describe-symbol... if I eval it sticks to t.
+(setq auto-revert-use-notify t)
+
+;; Use clj-reload instead of tools.namespace
+(setq cider-ns-code-reload-tool 'clj-reload)
 
 ;; TODO
 ;; - maybe better parens guardrails https://github.com/hlissner/doom-emacs/issues/478

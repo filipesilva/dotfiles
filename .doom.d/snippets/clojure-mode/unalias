@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: unalias
-# uuid: unalias
-# --
-(ns-unalias *ns* $0)

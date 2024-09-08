@@ -17,7 +17,9 @@
     cob = checkout -b
     wip = commit -m "wip" .
     unc = reset HEAD~1
-    miw = git merge -Xignore-space-change
+    miw = merge -Xignore-space-change
+    nohooks = config --unset core.hookspath
+    as-of = "!f() { git rev-list -n 1 --first-parent --before=$1 master; }; f"
 [core]
     excludesfile = ~/.gitignore_global
     editor = code --wait
