@@ -1,10 +1,16 @@
+# clojure
 .vscode/
 .calva/
 .lsp/
 .nrepl-port
+.clj-kondo/.cache/
+.cpcache/
 
 # emacs temp files
 .\#*
 
 # mac stuff
 .DS_Store
+
+# python
+__pycache__/
