@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+# remove existing
+rm -rf doom
+rm .gitconfig
+rm .gitignore_global
+
+# add them again
+ln /Users/filipesilva/.gitconfig .gitconfig
+ln /Users/filipesilva/.gitignore_global .gitignore_global
+mkdir doom
+ln /Users/filipesilva/.config/doom/cheatsheet.md doom/cheatsheet.md
+ln /Users/filipesilva/.config/doom/evil-cleverparens-readme.md doom/evil-cleverparens-readme.md
+ln /Users/filipesilva/.config/doom/packages.el doom/packages.el
+ln /Users/filipesilva/.config/doom/config.el doom/config.el
+ln /Users/filipesilva/.config/doom/init.el doom/init.el
