@@ -116,9 +116,10 @@
              "F"  #'cider-format-buffer)))
 
 ;; Metabase dev
-(setq cider-path-translations '(("/app/harbormaster/source" . "~/work/harbormaster")
-                                ("/app/metabase/source" . "~/work/metabase")
-                                ("/root/.m2/" . "~/.mba/.mba-home/.m2/")))
+(setq cider-path-translations '(("/app/harbormaster/source" . "~/repos/work/harbormaster/")
+                                ("/app/metabase/source" . "~/repos/work/metabase")
+                                ("/root/.m2/" . "~/.mba/.mba-home/.m2/")
+                                ("/root/.gitlibs/" . "~/.mba/.mba-home/.gitlibs/")))
 
 ;; Disable zoom with ctrl+mousewheel
 (unbind-key "C-<wheel-up>")
@@ -222,3 +223,14 @@
 
 ;; Allow interrupt in JVM 21+
 (setq cider-enable-nrepl-jvmti-agent t)
+
+;; what it says
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Use bash for tooling but fish for terminal emulators
+(setq shell-file-name (executable-find "bash"))
+(setq-default vterm-shell "/opt/homebrew/bin/fish")
+(setq-default explicit-shell-file-name "/opt/homebrew/bin/fish")
+
+;; Don't ask to reuse dead repls
+(setq cider-reuse-dead-repls nil)

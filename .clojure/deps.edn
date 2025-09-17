@@ -16,7 +16,7 @@
  ;; :paths ["src"]
 
  ;; External dependencies
- 
+
  ;; :deps {
  ;;   org.clojure/clojure {:mvn/version "1.10.1"}
  ;; }
@@ -43,9 +43,9 @@
  ;; }
  :deps {;; https://github.com/hugoduncan/criterium
         criterium/criterium         {:mvn/version "0.4.6"}
-        ;; https://github.com/weavejester/hashp
-        ;; remember to do `(require 'hashp.core)`
-        hashp/hashp                 {:mvn/version "0.2.2"}
+        ;; https://github.com/tonsky/clojure-plus#clojurehashp
+        ;; remember to do `(clojure+.hashp/install!)`
+        io.github.tonsky/clojure-plus {:mvn/version "1.6.1"}
         ;; https://github.com/vvvvalvalval/scope-capture
         vvvvalvalval/scope-capture  {:mvn/version "0.3.3"}
         ;; https://github.com/clojure/tools.trace
@@ -55,7 +55,9 @@
         ;; https://github.com/tonsky/datascript
         datascript/datascript       {:mvn/version "1.6.5"}
         ;; https://github.com/weavejester/medley
-        dev.weavejester/medley       {:mvn/version "1.8.1"}
+        dev.weavejester/medley      {:mvn/version "1.8.1"}
+        ;; https://github.com/rplevy/swiss-arrows?tab=readme-ov-file
+        swiss-arrows/swiss-arrows   {:mvn/version "1.0.0"}
         ,}
 
  }
