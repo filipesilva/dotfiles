@@ -27,6 +27,7 @@
 	pusht = !git push && git push --tags
 	pr = !git push && gh pr create --fill --draft
 	save = !git commit -m \"save: $(date -u +%Y-%m-%dT%H:%M:%SZ)\"
+	obsidian = "!\"$HOME/vaults/personal/bin/git-obsidian\" \"$(pwd)\""
 [core]
     excludesfile = ~/.gitignore_global
     editor = code --wait

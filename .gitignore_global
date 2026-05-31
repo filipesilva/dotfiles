@@ -33,4 +33,7 @@ datomic-pro
 storage
 backups
 
-TODOS.md
+TODO.md
+
+# obsidian-backed notes (git obsidian)
+.git-obsidian
