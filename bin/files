@@ -7,3 +7,4 @@
 .config/doom/config.el
 .config/doom/init.el
 .config/doom/sha
+.config/emacs-plus/build.yml
