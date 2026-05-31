@@ -1,0 +1,9 @@
+.gitconfig
+.gitignore_global
+.clojure/deps.edn
+.config/doom/cheatsheet.md
+.config/doom/evil-cleverparens-readme.md
+.config/doom/packages.el
+.config/doom/config.el
+.config/doom/init.el
+.config/doom/sha

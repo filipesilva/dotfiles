@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# uninstall anything on this system that is not in the repo's Brewfile.
+# dry run by default; pass --force to actually remove.
+
+set -eu
+
+bin="$(cd "$(dirname "$0")" && pwd)"
+repo="$(dirname "$bin")"
+
+# homebrew
+brew bundle cleanup --file="$repo/Brewfile" "$@"

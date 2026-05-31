@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+
+# apply this repo's config to the current system
+
+set -eu
+
+bin="$(cd "$(dirname "$0")" && pwd)"
+repo="$(dirname "$bin")"
+
+# tracked files
+while IFS= read -r f; do
+  [ -z "$f" ] && continue
+  mkdir -p "$HOME/$(dirname "$f")"
+  rm -f "$HOME/$f"
+  cp "$repo/$f" "$HOME/$f"
+done < "$bin/files"
+
+# homebrew
+brew bundle install --file="$repo/Brewfile"
+
+# doom emacs: check out the saved sha and sync
+sha="$(cat "$HOME/.config/doom/sha")"
+git -C "$HOME/.config/emacs" fetch
+git -C "$HOME/.config/emacs" checkout "$sha"
+"$HOME/.config/emacs/bin/doom" sync

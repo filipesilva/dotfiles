@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+# save the current system's config into this repo
+
+set -eu
+
+bin="$(cd "$(dirname "$0")" && pwd)"
+repo="$(dirname "$bin")"
+
+# capture the doom emacs sha into its config file
+git -C "$HOME/.config/emacs" rev-parse HEAD > "$HOME/.config/doom/sha"
+
+# tracked files
+while IFS= read -r f; do
+  [ -z "$f" ] && continue
+  mkdir -p "$repo/$(dirname "$f")"
+  rm -f "$repo/$f"
+  cp "$HOME/$f" "$repo/$f"
+done < "$bin/files"
+
+# homebrew
+brew bundle dump --force --file="$repo/Brewfile"
