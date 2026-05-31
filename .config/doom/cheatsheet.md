@@ -80,6 +80,12 @@ C-c C-l - collect results into a new buffer
 SPC ' - repeat last search
 SPC " - show list of searches and repeat one
 
+## Reading
+
+z a - toggle fold
+z m - fold all
+z r - open all
+
 
 ## Editing
 

@@ -1,9 +1,13 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-;; To install a package with Doom you must declare them here and run 'doom sync'
-;; on the command line, then restart Emacs for the changes to take effect -- or
-;; use 'M-x doom/reload'.
+;; To install a package:
+;;
+;;   1. Declare them here in a `package!' statement,
+;;   2. Run 'doom sync' in the shell,
+;;   3. Restart Emacs.
+;;
+;; Use 'C-h f package\!' to look up documentation for the `package!' macro.
 
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
@@ -52,9 +56,9 @@
 ;; My stuff
 
 ;; Install https://github.com/luxbock/evil-cleverparens (see config.el for configuration)
-(package! evil-cleverparens :pin "6637717af0bdac55f97eef98433d53a10395cf77")
+(package! evil-cleverparens :pin "4c413a132934695b975004d429b0b0a6e3d8ca38")
 
 ;; Install expand-region
 ;; https://github.com/magnars/expand-region.el
-;; https://github.com/hlissner/doom-emacs/blob/develop/docs/faq.org#why-do-non-evil-users-get-expand-region-but-not-evil-users
-(package! expand-region :pin "541d971f7c77ca5c0f66c88bcbfeb0d165883023")
+;; https://github.com/doomemacs/doomemacs/blob/master/docs/faq.org#why-no-expand-region-for-evil-users-by-default
+(package! expand-region :pin "351279272330cae6cecea941b0033a8dd8bcc4e8")

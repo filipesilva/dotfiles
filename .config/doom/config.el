@@ -6,9 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-(setq user-full-name "Filipe Silva"
-      user-mail-address "filipematossilva@gmail.com")
-
+;; (setq user-full-name "John Doe"
+;;       user-mail-address "john@doe.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -45,23 +44,22 @@
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
-;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
+;; `with-eval-after-load' block, otherwise Doom's defaults may override your
+;; settings. E.g.
 ;;
-;;   (after! PACKAGE
+;;   (with-eval-after-load 'PACKAGE
 ;;     (setq x y))
 ;;
 ;; The exceptions to this rule:
 ;;
 ;;   - Setting file/directory variables (like `org-directory')
 ;;   - Setting variables which explicitly tell you to set them before their
-;;     package is loaded (see 'C-h v VARIABLE' to look up their documentation).
+;;     package is loaded (see 'C-h v VARIABLE' to look them up).
 ;;   - Setting doom variables (which start with 'doom-' or '+').
 ;;
 ;; Here are some additional functions/macros that will help you configure Doom.
 ;;
 ;; - `load!' for loading external *.el files relative to this one
-;; - `use-package!' for configuring packages
-;; - `after!' for running code after a package has loaded
 ;; - `add-load-path!' for adding directories to the `load-path', relative to
 ;;   this file. Emacs searches the `load-path' when you load packages with
 ;;   `require' or `use-package'.
@@ -76,7 +74,14 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+
 ;; My stuff
+
+(setq user-full-name "Filipe Silva"
+      user-mail-address "filipematossilva@gmail.com")
+
+;; Start server for emacsclient
+(server-start)
 
 ;; Fira Code font
 ;; https://github.com/tonsky/FiraCode
@@ -125,6 +130,9 @@
 (unbind-key "C-<wheel-up>")
 (unbind-key "C-<wheel-down>")
 
+;; Disable text scale with pinch
+(unbind-key "<pinch>")
+
 ;; Disable clj-refactor AST warnings, but don't auto-build on startup
 (setq cljr-warn-on-eval nil)
 (setq cljr-eagerly-build-asts-on-startup nil)
@@ -147,29 +155,29 @@
 
 ;; There's a already a `SPC i r` as `From evil register`, that calls `consult-register`.
 ;; This one, `SPC i R', stores to registers.
-(map! :leader
-      :prefix ("i")
-      :desc "To evil register"
-      "R" #'consult-register-store)
+;; (map! :leader
+;;       :prefix ("i")
+;;       :desc "To evil register"
+;;       "R" #'consult-register-store)
 
 ;; Inspired by https://gist.github.com/dpsutton/7556cf1f4ecfc97da7b7e9d6dbf210c6
 ;; Changed to eval without sending to repl buffer.
 ;; Thanks Dan!
-(defun cider-insert-register-contents (register)
-  (interactive (list (register-read-with-preview "From register")))
-  (let ((form (get-register register)))
-    ;; could put form into a buffer and check if its parens are
-    ;; balanced
-    (if form
-        (cider-interactive-eval form nil nil (cider--nrepl-pr-request-map))
-      (user-error "No saved form in register"))))
+;; (defun cider-insert-register-contents (register)
+;;   (interactive (list (register-read-with-preview "From register")))
+;;   (let ((form (get-register register)))
+;;     ;; could put form into a buffer and check if its parens are
+;;     ;; balanced
+;;     (if form
+;;         (cider-interactive-eval form nil nil (cider--nrepl-pr-request-map))
+;;       (user-error "No saved form in register"))))
 
 ;; TODO: improve by setting slots contents on config, making it more ergonomic to submit slot
 ;; Eval register contents in repl, \ e g
-(map! :localleader
-      :map (clojure-mode-map clojurescript-mode-map clojurec-mode-map)
-      :prefix "e"
-      "g"  #'cider-insert-register-contents)
+;; (map! :localleader
+;;       :map (clojure-mode-map clojurescript-mode-map clojurec-mode-map)
+;;       :prefix "e"
+;;       "g"  #'cider-insert-register-contents)
 
 ;; Nice for uuids and ranges
 (map! :localleader
@@ -197,10 +205,10 @@
 
 ;; Set current buffer to auto-revert to disk changes
 ;; https://emacs.stackexchange.com/a/245/43660
-(map! :leader
-      :prefix ("t")
-      :desc "Toggle auto-revert"
-      "R"  #'auto-revert-mode)
+;; (map! :leader
+;;       :prefix ("t")
+;;       :desc "Toggle auto-revert"
+;;       "R"  #'auto-revert-mode)
 
 ;; Use clj-reload instead of tools.namespace
 (setq cider-ns-code-reload-tool 'clj-reload)
@@ -225,10 +233,10 @@
 (setq cider-enable-nrepl-jvmti-agent t)
 
 ;; what it says
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; Use bash for tooling but fish for terminal emulators
-(setq shell-file-name (executable-find "bash"))
+(setq shell-file-name (executable-find "zsh"))
 (setq-default vterm-shell "/opt/homebrew/bin/fish")
 (setq-default explicit-shell-file-name "/opt/homebrew/bin/fish")
 

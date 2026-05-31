@@ -45,7 +45,7 @@
         criterium/criterium         {:mvn/version "0.4.6"}
         ;; https://github.com/tonsky/clojure-plus#clojurehashp
         ;; remember to do `(clojure+.hashp/install!)`
-        io.github.tonsky/clojure-plus {:mvn/version "1.6.1"}
+        io.github.tonsky/clojure-plus {:mvn/version "1.7.0"}
         ;; https://github.com/vvvvalvalval/scope-capture
         vvvvalvalval/scope-capture  {:mvn/version "0.3.3"}
         ;; https://github.com/clojure/tools.trace

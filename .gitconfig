@@ -1,7 +1,7 @@
 [user]
     name = Filipe Silva
     email = filipematossilva@gmail.com
-	signingkey = /Users/filipesilva/.ssh/id_ed25519
+    signingkey = /Users/filipesilva/.ssh/id_ed25519
 [alias]
     co = checkout
     br = branch
@@ -21,12 +21,15 @@
     miw = merge -Xignore-space-change
     nohooks = config --unset core.hookspath
     as-of = "!f() { git rev-list -n 1 --first-parent --before=$1 master; }; f"
+	sync = !git fetch upstream && git reset --hard upstream/$(git branch --show-current)
+    unstage = restore --staged
+    com = "!f() { git add -A && git commit -m \"$*\"; }; f"
+	pusht = !git push && git push --tags
+	pr = !git push && gh pr create --fill --draft
+	save = !git commit -m \"save: $(date -u +%Y-%m-%dT%H:%M:%SZ)\"
 [core]
     excludesfile = ~/.gitignore_global
     editor = code --wait
-[diff]
-    tool = default-difftool
-	  external = difft
 [difftool "default-difftool"]
     cmd = code --wait --diff $LOCAL $REMOTE
 [rebase]
@@ -42,7 +45,9 @@
     required = true
 [merge]
     conflictStyle = diff3
+    ff = false
 [push]
-	autoSetupRemote = true
+    autoSetupRemote = true
+    followTags = true
 [gpg]
-	format = ssh
+    format = ssh

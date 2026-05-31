@@ -5,6 +5,7 @@
 .nrepl-port
 .clj-kondo/.cache/
 .cpcache/
+.playwright-mcp
 
 # emacs temp files
 .\#*
@@ -17,3 +18,19 @@ __pycache__/
 
 # claude
 .claude/settings.local.json
+.claude/scheduled_tasks.lock
+
+# nvk
+.rebel_readline_history
+.nrepl-port
+.http-port
+.cpcache
+.clj-kondo
+nohup.out
+
+# dpm
+datomic-pro
+storage
+backups
+
+TODOS.md
