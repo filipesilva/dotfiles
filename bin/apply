@@ -15,6 +15,15 @@ while IFS= read -r f; do
   cp "$repo/$f" "$HOME/$f"
 done < "$bin/files"
 
+# obsidian vaults: point ~/vaults at the iCloud obsidian documents folder,
+# so every vault under it is reachable at ~/vaults/<name>
+vaults="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents"
+if [ -L "$HOME/vaults" ] || [ ! -e "$HOME/vaults" ]; then
+  ln -sfn "$vaults" "$HOME/vaults"
+else
+  echo "apply: ~/vaults exists and is not a symlink; remove it to link to iCloud" >&2
+fi
+
 # homebrew
 brew bundle install --file="$repo/Brewfile"
 
