@@ -28,6 +28,8 @@
 	pr = !git push && gh pr create --fill --draft
 	save = !git commit -m \"save: $(date -u +%Y-%m-%dT%H:%M:%SZ)\"
 	obsidian = "!\"$HOME/vaults/personal/bin/git-obsidian\" \"$(pwd)\""
+    dummy = commit -m "dummy" --allow-empty
+	cc = "!f() { git checkout -b \"$1\" && claude --permission-mode auto \"do the thing this branch is supposed to do\"; }; f"
 [core]
     excludesfile = ~/.gitignore_global
     editor = code --wait

@@ -1,7 +1,7 @@
 # Style
 - favor clear, simple, straightforward thinking both for yourself and others
 - aim to be a surgeon, not a butcher, effecting the most impact with the least changes
-- prefer to let the code speak for itself instead of adding comments
+- use comments very sparingly, prefer to let the code speak for itself
 - do not use — (em dash)
 
 # Behaviour

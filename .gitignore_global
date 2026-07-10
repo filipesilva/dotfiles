@@ -1,11 +1,12 @@
 # clojure
-.vscode/
-.calva/
-.lsp/
-.nrepl-port
-.clj-kondo/.cache/
-.cpcache/
-.playwright-mcp
+/.vscode/
+/.calva/
+/.lsp/
+/.nrepl-port
+/.clj-kondo/.cache/
+/.clj-kondo/imports/
+/.cpcache/
+/.playwright-mcp
 
 # emacs temp files
 .\#*
@@ -17,23 +18,22 @@
 __pycache__/
 
 # claude
-.claude/settings.local.json
-.claude/scheduled_tasks.lock
+/.claude/settings.local.json
+/.claude/scheduled_tasks.lock
 
 # nvk
-.rebel_readline_history
-.nrepl-port
-.http-port
-.cpcache
-.clj-kondo
-nohup.out
+/.rebel_readline_history
+/.nrepl-port
+/.http-port
+/.cpcache
+/nohup.out
 
 # dpm
-datomic-pro
-storage
-backups
+/datomic-pro
+/storage
+/backups
 
-TODO.md
+/TODO.md
 
 # obsidian-backed notes (git obsidian)
-.git-obsidian
+/.git-obsidian

@@ -4,7 +4,7 @@
   "permissions": {
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
+  "model": "claude-fable-5[1m]",
   "enabledPlugins": {
     "obsidian@obsidian-skills": true
   },
@@ -26,6 +26,7 @@
   "effortLevel": "high",
   "awaySummaryEnabled": false,
   "tui": "fullscreen",
+  "skipWorkflowUsageWarning": true,
   "autoCompactEnabled": false,
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,

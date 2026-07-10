@@ -58,6 +58,8 @@
         dev.weavejester/medley      {:mvn/version "1.8.1"}
         ;; https://github.com/rplevy/swiss-arrows?tab=readme-ov-file
         swiss-arrows/swiss-arrows   {:mvn/version "1.0.0"}
+        ;; https://github.com/clojure-emacs/sayid 
+        mx.cider/sayid              {:mvn/version "0.6.0"}
         ,}
 
  }
