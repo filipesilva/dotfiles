@@ -10,3 +10,4 @@
 .config/emacs-plus/build.yml
 .claude/CLAUDE.md
 .claude/settings.json
+Library/Preferences/com.googlecode.iterm2.plist
