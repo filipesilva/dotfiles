@@ -5,6 +5,19 @@
     "defaultMode": "auto"
   },
   "model": "claude-fable-5[1m]",
+  "hooks": {
+    "SubagentStart": [
+      {
+        "matcher": "tldraw-offline",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh '/Users/filipesilva/skills/tldraw-offline/inject-server-context.sh' SubagentStart"
+          }
+        ]
+      }
+    ]
+  },
   "enabledPlugins": {
     "obsidian@obsidian-skills": true
   },
@@ -22,6 +35,7 @@
       }
     }
   },
+  "outputStyle": "concise",
   "spinnerTipsEnabled": false,
   "effortLevel": "high",
   "awaySummaryEnabled": false,

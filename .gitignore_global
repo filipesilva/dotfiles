@@ -37,3 +37,7 @@ __pycache__/
 
 # obsidian-backed notes (git obsidian)
 /.git-obsidian
+
+
+/.tmp
+/.intel
