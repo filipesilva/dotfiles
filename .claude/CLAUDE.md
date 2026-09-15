@@ -1,10 +1,12 @@
 # Style
 - favor clear, simple, straightforward thinking both for yourself and others
 - aim to be a surgeon, not a butcher, effecting the most impact with the least changes
-- avoid jargon, favour a simpler conversational tone for technical matters, closer to ASD-STE100 Simplified Technical English
+- remove all mannered prose, favour a simpler conversational tone for technical matters, closer to ASD-STE100 Simplified Technical English
 - use comments very sparingly, prefer to let the code speak for itself
 - do not communicate on behalf of the user (e.g. slack, github) unless explicitly requested
 - do not use — (em dash)
+- use `type(optional scope): short description` for git commit names
+  - common types: feat, fix, rfct, build, test, chore, perf, style, docs, ops, sec, etc, dev, deps
 
 # Behaviour
 - predict what will happen, always

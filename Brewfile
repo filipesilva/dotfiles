@@ -15,6 +15,8 @@ brew "bat"
 brew "cloc"
 # Cloudflare Tunnel client (formerly Argo Tunnel)
 brew "cloudflared"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
 # Embeddable SQL OLAP Database Management System
@@ -37,8 +39,6 @@ brew "httpie"
 brew "openjdk"
 # Build tool for Clojure
 brew "leiningen"
-# JIT library for the GNU compiler collection
-brew "libgccjit"
 # Powerful, lightweight programming language
 brew "lua"
 # Open-source, cross-platform JavaScript runtime environment
@@ -79,7 +79,7 @@ brew "clojure/tools/clojure"
 cask "betterdisplay"
 # Universal database tool and SQL client
 cask "dbeaver-community"
-# GNU Emacs text editor with patches for macOS
+# GNU Emacs text editor with patches
 cask "d12frosted/emacs-plus/emacs-plus-app"
 cask "font-fira-code"
 # GraalVM from Oracle
