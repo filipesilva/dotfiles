@@ -15,6 +15,9 @@
 - after doing something, review it to make sure you're happy with the result, and if you're not then improve it or try again
 
 # Workflows
+- do not commit changes unless explicitly requested
+  - let me review changes you're making and stage them myself
+  - most of the time we'll iterate a lot before commiting
 - when making something new
   - explore, plan, and only after that code
   - the interface must be simple and clean
