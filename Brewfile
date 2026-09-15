@@ -84,6 +84,8 @@ cask "d12frosted/emacs-plus/emacs-plus-app"
 cask "font-fira-code"
 # GraalVM from Oracle
 cask "graalvm-jdk@21"
+# Utility to hide menu bar items
+cask "hiddenbar"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Knowledge base that works on top of a local folder of plain text Markdown files
@@ -99,4 +101,3 @@ vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
 vscode "ms-python.vscode-python-envs"
 npm "defuddle-cli"
-npm "dl-librescore"
